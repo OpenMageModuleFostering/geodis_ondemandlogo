@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Geodis_Ondemandlogo>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Mage_Shipping />
+            </depends>
+        </Geodis_Ondemandlogo>
+    </modules>
+</config>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package>
+    <name>Geodis_Ondemandlogo</name>
+    <version>1.0.5</version>
+    <stability>stable</stability>
+    <license>http://opensource.org/licenses/afl-3.0.php</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Laissez &#xE0; vos clients le choix de leur date de livraison</summary>
+    <description>Int&#xE9;gration de textes et logos facilitant&#xD;
+&#xD;
+        le param&#xE9;trage de votre site. Avec&#xD;
+&#xD;
+        Geodis On Demand, vos clients&#xD;
+&#xD;
+        b&#xE9;n&#xE9;ficient d'une gamme de&#xD;
+&#xD;
+        prestations leur permettant de choisir&#xD;
+&#xD;
+        partout en France, par t&#xE9;l&#xE9;phone ou&#xD;
+&#xD;
+        par internet, le lieu et la date de&#xD;
+&#xD;
+        livraison.</description>
+    <notes>First preview release</notes>
+    <authors><author><name>Ysance</name><user>Ysance</user><email>contact@ysance.com</email></author></authors>
+    <date>2015-09-07</date>
+    <time>13:52:11</time>
+    <contents><target name="magecommunity"><dir name="Geodis"><dir name="Ondemandlogo"><dir name="Block"><dir name="Sales"><dir name="Order"><dir name="View"><dir name="Tab"><file name="Info.php" hash="7d63ffc67128c35bdb7ffe8d46a68cf3"/></dir></dir></dir></dir><file name="Shipping.php" hash="1fde83a9fe544bbac3ecb826d5fb7a5d"/></dir><dir name="Helper"><file name="Data.php" hash="d629ed3e71d272c0078c44b612df7f97"/></dir><dir name="Model"><file name="Carrier.php" hash="c8bea67a2503675253688bf29c21d0ba"/><file name="Observer.php" hash="a36b8e365c6e951a38b8cd8ebf8e16e0"/><dir name="Resource"><dir name="Shippment"><file name="Collection.php" hash="d2e5c6bb2b10ee6fb5885538d8e3734b"/></dir><file name="Shippment.php" hash="9a33df8309219fc248ff3a2ce3107dcd"/></dir><dir name="Sales"><file name="Order.php" hash="b638d4eb0b3f5bccdb9f84b9f231584d"/></dir><file name="Shippment.php" hash="169dade517da0340f8405fbc267ffea4"/></dir><dir name="etc"><file name="config.xml" hash="688608a1a042f0f078492a2a524aaf4f"/><file name="system.xml" hash="1ba4883383254378b0e1dccc62d014f5"/></dir><dir name="sql"><dir name="geodis_setup"><file name="mysql4-install-0.1.0.php" hash="4f8e22f703e1fdd5e14f98b99a900b2a"/><file name="mysql4-uninstall-0.1.0.php" hash="69765eba924573585a8b7fbc484f3c76"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="rwd"><dir name="default"><dir name="layout"><file name="geodis.xml" hash="870c20e6f383492cff41277db1904c01"/></dir><dir name="template"><dir name="geodis"><dir name="checkout"><dir name="onepage"><dir name="shipping_method"><file name="available.phtml" hash="fe40025e44f99084607449b46d7b5df6"/></dir></dir></dir><file name="shipping.phtml" hash="e47c42107d0990fa4404d715669c1af4"/></dir></dir></dir></dir><dir name="base"><dir name="default"><dir name="layout"><file name="geodis.xml" hash="61b780b4c4335234d91ac51c0bfc3292"/></dir><dir name="template"><dir name="geodis"><dir name="checkout"><dir name="onepage"><dir name="shipping_method"><file name="available.phtml" hash="e29b585395843071ec92b1c63b4d6d5d"/></dir></dir></dir><file name="shipping.phtml" hash="46faef9ea3fc22988268cd847bbb26b6"/></dir></dir></dir></dir></dir><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="geodis_ondemandlogo.xml" hash="53fc0a79266a748c8615c95411180d8d"/></dir><dir name="template"><dir name="geodis"><dir name="sales"><dir name="order"><dir name="view"><dir name="tab"><file name="info.phtml" hash="e115cc9844100ff4e1f2f83e17da7a07"/></dir></dir></dir></dir></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Geodis_Ondemandlogo.xml" hash="1c825a953476a967a01b9d052681795b"/></dir></target><target name="magelocale"><dir name="fr_FR"><file name="Geodis_Ondemandlogo.csv" hash="354d210c2e846de6080300a393febfac"/></dir></target><target name="mageskin"><dir name="frontend"><dir name="base"><dir name="default"><dir name="images"><dir name="geodis"><file name="geodis_od_express.jpg" hash="e44ba0f43f0bc6e5f6c1ba23eda4b46b"/><file name="geodis_od_messagerie.jpg" hash="e44ba0f43f0bc6e5f6c1ba23eda4b46b"/><file name="geodis_rdv_tel_express.jpg" hash="e44ba0f43f0bc6e5f6c1ba23eda4b46b"/><file name="geodis_rdv_tel_messagerie.jpg" hash="e44ba0f43f0bc6e5f6c1ba23eda4b46b"/><file name="logo.png" hash="6886f79ef197126c02826177e5941646"/></dir></dir><dir name="css"><dir name="geodis"><file name="geodis.css" hash="03e5f4bacefd05764d52afc3f75fd9d0"/></dir></dir></dir></dir><dir name="rwd"><dir name="default"><dir name="images"><dir name="geodis"><file name="logo.png" hash="6886f79ef197126c02826177e5941646"/></dir></dir></dir></dir></dir></target><target name="mage"><dir name="js"><dir name="geodis"><file name="jquery-1.11.0.min.js" hash="eaec1712551cd2792f4607f39fab12e7"/><file name="no-conflict.js" hash="f10bea9c8a693484702a21f6078ceb66"/></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.3.0</min><max>5.6.0</max></php></required></dependencies>
+</package>

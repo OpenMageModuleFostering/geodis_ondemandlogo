@@ -1,0 +1,185 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Geodis_Ondemandlogo>
+            <version>0.1.0</version>
+        </Geodis_Ondemandlogo>
+    </modules>
+    <adminhtml>
+        <layout>
+            <updates>
+                <ondemandlogo>
+                    <file>geodis_ondemandlogo.xml</file>
+                </ondemandlogo>
+            </updates>
+        </layout>
+        <events>
+            <sales_order_grid_collection_load_before>
+                <observers>
+                    <geodis_ondemandlogo>
+                        <model>Geodis_Ondemandlogo_Model_Observer</model>
+                        <method>salesOrderGridCollectionLoadBefore</method>
+                    </geodis_ondemandlogo>
+                </observers>
+            </sales_order_grid_collection_load_before>
+        </events>
+        <translate>
+            <modules>
+                <geodis_ondemandlogo>
+                    <files>
+                        <default>Geodis_Ondemandlogo.csv</default>
+                    </files>
+                </geodis_ondemandlogo>
+            </modules>
+        </translate>
+    </adminhtml>
+    
+    <global>
+        <helpers>
+            <geodis_ondemandlogo>
+                <class>Geodis_Ondemandlogo_Helper</class>
+            </geodis_ondemandlogo>
+        </helpers>
+        <blocks>
+            <geodis_ondemandlogo>
+                <class>Geodis_Ondemandlogo_Block</class>
+            </geodis_ondemandlogo>
+            <adminhtml>
+                <rewrite>
+                    <sales_order_view_tab_info>Geodis_Ondemandlogo_Block_Sales_Order_View_Tab_Info</sales_order_view_tab_info>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+        <models>
+            <geodis_ondemandlogo>
+                <class>Geodis_Ondemandlogo_Model</class>
+                <resourceModel>geodis_ondemandlogo_resource</resourceModel>
+            </geodis_ondemandlogo>
+            <geodis_ondemandlogo_resource>
+                <class>Geodis_Ondemandlogo_Model_Resource</class>
+                <entities>
+                    <shippment>
+                        <table>geodis_ondemandlogo</table>
+                    </shippment>
+                </entities>
+            </geodis_ondemandlogo_resource>
+            <sales>
+                <rewrite>
+                    <order>Geodis_Ondemandlogo_Model_Sales_Order</order>
+                </rewrite>
+            </sales>
+        </models>
+        <resources>
+            <geodis_setup>
+                <setup>
+                    <module>Geodis_Ondemandlogo</module>
+                    <class>Mage_Catalog_Model_Resource_Eav_Mysql4_Setup</class>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </geodis_setup>
+        </resources>
+    </global>
+    <frontend>
+        <translate>
+            <modules>
+                <geodis_ondemandlogo>
+                    <files>
+                        <default>Geodis_Ondemandlogo.csv</default>
+                    </files>
+                </geodis_ondemandlogo>
+            </modules>
+        </translate>
+        	
+        <events>
+            <checkout_controller_onepage_save_shipping_method>
+                <observers>
+                    <checkout_controller_onepage_save_shipping_method>
+                        <type>singleton</type>
+                        <class>Geodis_Ondemandlogo_Model_Observer</class>
+                        <method>saveShippingMethod</method>
+                    </checkout_controller_onepage_save_shipping_method>
+                </observers>
+            </checkout_controller_onepage_save_shipping_method>
+            <sales_model_service_quote_submit_after>
+                <observers>
+                    <geodis_checkout_controller_onepage_save_shipping_method>
+                        <type>model</type>
+                        <class>Geodis_Ondemandlogo_Model_Observer</class>
+                        <method>saveOrderAfter</method>
+                    </geodis_checkout_controller_onepage_save_shipping_method>
+                </observers>
+            </sales_model_service_quote_submit_after>
+            <sales_order_load_after>
+                <observers>
+                    <sales_order_load_after>
+                        <type>model</type>
+                        <class>Geodis_Ondemandlogo_Model_Observer</class>
+                        <method>loadOrderAfter</method>
+                    </sales_order_load_after>
+                </observers>
+            </sales_order_load_after>
+        </events>
+        	
+        <layout>
+            <updates>
+                <geodis_ondemandlogo>
+                    <file>geodis.xml</file>
+                </geodis_ondemandlogo>
+            </updates>
+        </layout>
+    </frontend>
+    <!-- Default configuration -->
+    <default>
+        <carriers>
+            <geodis_ondemandlogo>
+                <active>1</active>
+                <model>geodis_ondemandlogo/carrier</model>
+                <title>Geodis Ondemandlogo Carrier</title>
+            </geodis_ondemandlogo>
+            <geodis_methods>
+				<!-- Mode de livraison 1 : GEODIS ON DEMAND premium -->
+                <method_1_active>1</method_1_active>
+                <method_1_description>Je choisirai ma demi-journée de livraison sur internet dès ma commande expédiée. Livraisons possibles du lundi au samedi matin sur une période de 14 jours. Livraisons en soirée proposées sur certaines communes. 1er créneau possible dès le lendemain matin de l’expédition.</method_1_description>
+                <geodis_od_express>Je choisirai ma demi-journée de livraison sur internet dès ma commande expédiée. Livraisons possibles du lundi au samedi matin sur une période de 14 jours. Livraisons en soirée proposées sur certaines communes. 1er créneau possible dès le lendemain matin de l’expédition.</geodis_od_express>
+                <method_1_price>0</method_1_price>
+                <!-- Mode de livraison 2 : GEODIS ON DEMAND standard -->
+                <method_2_active>1</method_2_active>
+                <method_2_description>Je choisirai ma journée de livraison sur internet une fois ma commande expédiée. Livraisons possibles du lundi au vendredi sur une période de 14 jours. 1er créneau possible à partir du surlendemain de l’expédition.</method_2_description>
+                <geodis_od_messagerie>Je choisirai ma journée de livraison sur internet une fois ma commande expédiée. Livraisons possibles du lundi au vendredi sur une période de 14 jours. 1er créneau possible à partir du surlendemain de l’expédition.</geodis_od_messagerie>
+                <method_2_price>0</method_2_price>
+                <!-- Mode de livraison 3 : GEODIS ON DEMAND live -->
+                <method_3_active>1</method_3_active>
+                <method_3_description>GEODIS me contactera par téléphone pour convenir d'un créneau horaire de livraison sur-mesure.</method_3_description>
+                <geodis_rdv_tel_express>GEODIS me contactera par téléphone pour convenir d'un créneau horaire de livraison sur-mesure.</geodis_rdv_tel_express>
+                <method_3_price>0</method_3_price>
+            </geodis_methods>
+        </carriers>
+    </default>
+    <stores>
+        <default>
+            <carriers>
+                <geodis_ondemandlogo>
+                    <active>1</active>
+                    <model>geodis_ondemandlogo/carrier</model>
+                    <title>Geodis Ondemandlogo Carrier</title>
+                </geodis_ondemandlogo>
+                <geodis_methods>
+					<!-- Mode de livraison 1 : GEODIS ON DEMAND premium -->
+                    <method_1_active>1</method_1_active>
+                    <method_1_description>I will schedule the delivery date and time online as soon as my order is shipped. Bookings available Monday to Saturday morning over a 14-day period. 1st possible slot: the morning of the day after shipping.</method_1_description>
+                    <method_1_price>0</method_1_price>
+					<!-- Mode de livraison 2 : GEODIS ON DEMAND standard -->
+                    <method_2_active>1</method_2_active>
+                    <method_2_description>I will schedule the date of my delivery online once the order has been shipped. Bookings available Monday to Friday over a 14-day period. 1st possible slot: second day after shipping.</method_2_description>
+                    <method_2_price>0</method_2_price>
+					<!-- Mode de livraison 3 : GEODIS ON DEMAND live -->
+                    <method_3_active>1</method_3_active>
+                    <method_3_description>GEODIS will call me to schedule a bespoke delivery appointment.</method_3_description>
+                    <method_3_price>0</method_3_price>
+                </geodis_methods>
+            </carriers>
+        </default>
+    </stores>
+</config>
